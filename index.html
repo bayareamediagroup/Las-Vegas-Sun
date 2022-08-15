@@ -77,69 +77,88 @@
             </div>
         </nav>
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div id="search"></div>
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col">
-                    <div id="office"></div>
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col">
-                    <div style="color: #c00; font-weight: bold;">Alerts</div>
-                    <div id="alert"></div>
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col">
-                    <div style="color: #c00; font-weight: bold;">Current Conditions</div>
-                    <div id="location"></div>
-                </div>
-            </div>
+          <div class="row">
+            <div class="col-md-6 col-12">
 
-            <div class="row">
+              <div class="row">
                 <div class="col">
-                    <div id="station"></div>
+                  <div id="search"></div>
                 </div>
-            </div>
+              </div>
 
+              <hr/>
 
-            <div id="observation"></div>
-            <hr/>
-            <div class="row">
+              <div class="row">
                 <div class="col">
-                    <div id="daily"></div>
+                  <div id="office"></div>
                 </div>
-            </div>
-            <hr/>
-            <div class="row">
+              </div>
+
+              <hr/>
+
+              <div class="row">
                 <div class="col">
-                    <div style="color: #c00; font-weight: bold;">Hourly Forcast</div>
-                    <div id="hourly"></div>
+                  <div style="color: #c00; font-weight: bold;">Alerts</div>
+                  <div id="alert"></div>
                 </div>
-            </div>
-            <hr/>
-            <div class="row">
+              </div>
+
+              <hr/>
+
+              <div class="row">
                 <div class="col">
-                    <div id="points"></div>
+                  <div style="color: #c00; font-weight: bold;">Current Conditions</div>
+                  <div id="location"></div>
                 </div>
-            </div>
-            <div class="row">
+              </div>
+
+              <div class="row">
                 <div class="col">
-                    <div id="glossary"></div>
+                  <div id="station"></div>
                 </div>
-            </div>
-            <div class="row">
+              </div>
+
+              <div id="observation"></div>
+
+              <hr/>
+
+              <div class="row">
                 <div class="col">
-                    <div id="map"></div>
+                  <div id="daily"></div>
                 </div>
+              </div>
+              <hr/>
+
+              <div class="row">
+                <div class="col">
+                  <div style="color: #c00; font-weight: bold;">Hourly Forcast</div>
+                  <div id="hourly"></div>
+                </div>
+              </div>
+
+              <hr/>
+
+              <div class="row">
+                <div class="col">
+                  <div id="points"></div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div id="glossary"></div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div id="map"></div>
+                </div>
+              </div>
+
+              <!-- //end container-->
             </div>
+          </div>
         </div>
 
         <script type="text/template" id="search-template">
@@ -223,30 +242,32 @@
                 </div>
             </div>
             <div class="scrollmenu">
-                <div class="col" style="font-size: 12px;">
+            <div class="row">
+                <div class="col-3" style="font-size: 12px;">
                     <b>Wind</b><br/>
                     <span><%= properties.windSpeed.value %></span>
                     <span>&nbsp;mph</span>
                 </div>
-                <div class="col" style="font-size: 12px;">
+                <div class="col-3" style="font-size: 12px;">
                     <b>Barometer</b><br/><%= convert_barometer(properties.barometricPressure.value) %>in.
                 </div>
-                <div class="col" style="font-size: 12px;">
+                <div class="col-3" style="font-size: 12px;">
                     <b>Dew Point</b><br/><%= convert_temperature(properties.dewpoint.value) %>&deg;F
                 </div>
-                <div class="col" style="font-size: 12px;">
+                <div class="col-3" style="font-size: 12px;">
                     <b>Visibility</b><br/><%= properties.visibility.value %>
                 </div>
-                <div class="col" style="font-size: 12px;">
+                <div class="col-3" style="font-size: 12px;">
                     <b>Heat Index</b><br/><%= convert_temperature(properties.heatIndex.value) %>
                 </div>
-                <div class="col" style="font-size: 12px;">
+                <div class="col-3" style="font-size: 12px;">
                     <b>Humidity</b><br/><%= Math.round(properties.relativeHumidity.value) %>%
                 </div>
+              </div>
         </script>
 
         <script type="text/template" id="daily-template">
-            <div style="color: #c00; font-weight: bold;">7-Da Forecast</div>
+            <div style="color: #c00; font-weight: bold;">7-Day Forecast</div>
             <div class="scrollmenu" style="text-align: center">
                 <% 
                     let i = 1;
