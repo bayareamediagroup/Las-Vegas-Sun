@@ -30,7 +30,6 @@
 
             div.scrollmenu div {
                 display: inline-block;
-                padding: 10px;
             }
 
             #forecast_img {
@@ -269,12 +268,18 @@
         <script type="text/template" id="daily-template">
             <div style="color: #c00; font-weight: bold;">7-Day Forecast</div>
             <div class="scrollmenu" style="text-align: center">
+            <div class="row">
                 <% 
                     let i = 1;
                     _.each(properties.periods, function(json) { 
                 %>
+                <div class="col-1" style="overflow-wrap:">
                     <div id="dfct-<%= i %>">
                         <span style="font-size: 14px; font-weight: bold;"><%= json.name %></span>
+                        <br/>
+                        <span>
+                            <a href="#day/d-<%= i %>"><img src="<%= json.icon %>"/></a>
+                        </span>
                         <br/>
                         <span style="font-size: 12px">
                             <% if(json.isDaytime) { %>
@@ -284,18 +289,14 @@
                             <% } %>
                             <%= json.temperature %>&deg;&nbsp;<%= json.temperatureUnit %>
                         </span>
-                        <br/>
-                        <span>
-                            <a href="#day/d-<%= i %>"><img src="<%= json.icon %>"/></a>
-                        </span>
-                        <br/>
-                        <span style="font-size: 12px; width: 70px;"><%= json.shortForecast %></span>
-                        <br/>
+
                     </div>
+                  </div>
                 <% 
                  i = i + 1; 
                 }); 
                 %>
+            </div>
             </div>
         </script>
 
@@ -354,12 +355,11 @@
             <div><%= properties.gridX %></div>
             <div><%= properties.gridY %></div>
         </script>
+
         <script type="text/template" id="glossary-template">
-            <% _.each(glossary, function(json) { %>
-                <div><%= json.term %></div>
-                <hr/>
-            <% }); %>
+          <!-- Glossary Template -->
         </script>
+
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="app/main.js"></script>
