@@ -6,7 +6,7 @@ define(['baseModel'],
 
         this.set('endPoint', 'https://api.weather.gov');
         this.set('product', 'gridpoints'); 
-        this.set('gridId', 'VEH');
+        this.set('gridId', 'VEF');
         this.set('gridX', '123');
         this.set('gridY', '91');
         this.set('api', 'stations');
